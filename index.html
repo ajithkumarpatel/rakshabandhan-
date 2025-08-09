@@ -4,13 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raksha Bandhan</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Rakhsa Bandhan</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/quietflow.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            text-align: center;
+            color: #333;
+        }
+        header {
+            padding: 20px;
+        }
+        h1.title {
+            font-size: 3em;
+            margin: 0;
+            color: #e91e63;
+        }
+        .container {
+            padding: 20px;
+        }
+        .hpy {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff5722;
+        }
+        .intro {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .content {
+            font-size: 1em;
+            line-height: 1.6em;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 15px;
+        }
+        .frnd {
+            color: #2196f3;
+            font-weight: bold;
+        }
+        .sis {
+            color: #9c27b0;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+        }
+        .music {
+            font-size: 2em;
+            margin: 10px;
+            color: #e91e63;
+            cursor: pointer;
+        }
+        .music:hover {
+            color: #ff5722;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,42 +75,53 @@
     </header>
 
     <div class="container">
-        <div class="cover">
-            <div class="front">
-                <p class="hpy">RAKSHA</p>
-            </div>
-            <div class="back"></div>
-        </div>
-        <div class="cover2">
-            <div class="front2">
-                    <p class="hpy">BANDHAN</p>
-            </div>
-            <div class="back2"></div>
-        </div>
+        <p class="hpy">RAKSHA BANDHAN</p>
         <p class="intro">To my Sweetest Sister <br> <i class="em em-heartpulse"></i></p>
-        <p class="content">Within this small interval of time and you become part of my life. As my <span class="frnd">friend</span>, as my loving <span class="sis">sister</span> to share everything. Happy rakhi wishes to you.</p>
+        
+        <p class="content">
+            You are not just my sister, you are my best friend, my protector, and my forever support.  
+            Happy Raksha Bandhan!
+        </p>
+        <p class="content">
+            Our childhood fights have turned into beautiful memories.  
+            Thank you for being the best sister ever.
+        </p>
     </div>
     
     <footer>
-        <div class="box sound">
-            <div class="hindi">
-                    <a onClick="togglePlay()" class="music"><i class="fas fa-music"></i></a>
-            </div>
-            <div class="english">
-                    <a onClick="togglePlayEng()" class="music"><i class="fas fa-music"></i></a>
-            </div>
-        </div>
+        <a onclick="togglePlay()" class="music"><i class="fas fa-music"></i> Hindi</a>
+        <a onclick="togglePlayEng()" class="music"><i class="fas fa-music"></i> English</a>
     </footer>
 
     <!-- Audio Section -->
     <audio id="myAudio">
-        <source src="audio/Hindi.mp3"></source>
-        Your browser isn't invited for super fun audio time.
+        <source src="audio/Hindi.mp3">
     </audio>
     <audio id="myAudioEng">
-        <source src="audio/english.mp3"></source>
-        Your browser isn't invited for super fun audio time.
+        <source src="audio/english.mp3">
     </audio>
-    <script src="js/main.js"></script>
+
+    <script>
+        var audioHindi = document.getElementById("myAudio");
+        var audioEnglish = document.getElementById("myAudioEng");
+
+        function togglePlay() {
+            if (audioHindi.paused) {
+                audioHindi.play();
+                audioEnglish.pause();
+            } else {
+                audioHindi.pause();
+            }
+        }
+
+        function togglePlayEng() {
+            if (audioEnglish.paused) {
+                audioEnglish.play();
+                audioHindi.pause();
+            } else {
+                audioEnglish.pause();
+            }
+        }
+    </script>
 </body>
 </html>
